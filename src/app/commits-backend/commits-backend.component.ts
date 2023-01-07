@@ -1,17 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommitsService } from '../services/commits.service';
 import { Commit } from '../interfaces/commit.interface';
-import { ActivatedRoute } from '@angular/router';
+
+const repositoryApi = 'home-test-backend';
 
 @Component({
-  selector: 'app-commits-list',
-  templateUrl: './commits-list.component.html',
-  styleUrls: ['./commits-list.component.css']
+  selector: 'app-commits-backend',
+  templateUrl: './commits-backend.component.html',
+  styleUrls: ['./commits-backend.component.css']
 })
-export class CommitsListComponent implements OnInit {
+export class CommitsBackendComponent implements OnInit {
 
   commits: Commit[] = []; 
-  constructor(private commitsService: CommitsService, private activateRoute: ActivatedRoute) { }
+  constructor(private commitsService: CommitsService) { }
 
   ngOnInit(): void {
     this.loadCommits();
@@ -19,7 +20,7 @@ export class CommitsListComponent implements OnInit {
 
   //Loading the result from the API
   loadCommits(): void {
-    this.commitsService.getCommit().subscribe(
+    this.commitsService.getCommit(repositoryApi).subscribe(
       response => {
         this.commits = response;
       }

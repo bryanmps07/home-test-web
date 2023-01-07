@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CommitsListComponent } from './commits-list/commits-list.component';
+import { CommitsFrontendComponent } from './commits-frontend/commits-frontend.component';
+import { CommitsBackendComponent } from './commits-backend/commits-backend.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CommitsListComponent
+    CommitsBackendComponent,
+    CommitsFrontendComponent
   ],
   imports: [
     BrowserModule,
