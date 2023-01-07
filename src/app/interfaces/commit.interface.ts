@@ -1,8 +1,11 @@
+//Interfaces for GitHub API
+
 export interface Commit {
     author: Author
     committer: Committer
     message: string
-    tree: Tree
+    tree: Tree,
+    html_url: string
   }
   
   export interface Author {

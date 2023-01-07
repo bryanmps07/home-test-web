@@ -4,9 +4,9 @@ import { CommitsListComponent } from './commits-list/commits-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'commits', pathMatch: 'full', },
-  { path: 'commits', component: CommitsListComponent }
+  { path: 'commits', component: CommitsListComponent },
+  { path: 'commits/backend', component: CommitsListComponent },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

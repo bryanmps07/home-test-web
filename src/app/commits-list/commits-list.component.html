@@ -14,7 +14,7 @@
         <td>{{commit.committer.name}}</td>
         <td>{{commit.message}}</td>
         <td>{{commit.committer.date | date}}</td>
-        <td><a href="https://github.com/bryanmps07/home-test-backend/commit/{{commit.tree.sha}}" target="_blank" rel="noopener noreferrer">View Changes</a></td>
+        <td><a href="{{commit.html_url}}" target="_blank" rel="noopener noreferrer">View Changes</a></td>
       </tr>
     </tbody>
   </table>

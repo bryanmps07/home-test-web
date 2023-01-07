@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommitsService } from '../services/commits.service';
 import { Commit } from '../interfaces/commit.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-commits-list',
@@ -10,16 +11,16 @@ import { Commit } from '../interfaces/commit.interface';
 export class CommitsListComponent implements OnInit {
 
   commits: Commit[] = []; 
-  constructor(private commitsService: CommitsService) { }
+  constructor(private commitsService: CommitsService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadCommits();
   }
 
+  //Loading the result from the API
   loadCommits(): void {
     this.commitsService.getCommit().subscribe(
       response => {
-        console.log(response);
         this.commits = response;
       }
     );

@@ -11,6 +11,7 @@ export class CommitsService {
 
   constructor(private httpClient: HttpClient) { }
 
+  //Getting commits from the BackEnd
   getCommit(): Observable<Commit[]> {
     return this.httpClient.get<Commit[]>(url);
   }
