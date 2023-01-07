@@ -5,7 +5,7 @@ import { CommitsFrontendComponent } from './commits-frontend/commits-frontend.co
 
 const routes: Routes = [
   { path: '', redirectTo: 'commits', pathMatch: 'full', },
-  { path: 'commits', component: CommitsBackendComponent },
+  { path: 'commits', component: CommitsFrontendComponent },
   { path: 'commits/frontend', component: CommitsFrontendComponent },
   { path: 'commits/backend', component: CommitsBackendComponent },
 ];
